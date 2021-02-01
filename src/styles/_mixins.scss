@@ -1,0 +1,17 @@
+@mixin display-header-img {
+	display: flex;
+	align-items: center;
+	padding-left: 10px;
+}
+
+@mixin linear-gradient($color-dark, $color-ligth) {
+	background: $color-dark;
+	background: linear-gradient(0deg, $color-dark 0%, $color-ligth 100%);
+}
+
+@mixin container {
+	width: 90%;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px 0;
+}

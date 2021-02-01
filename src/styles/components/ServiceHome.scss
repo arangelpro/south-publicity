@@ -1,0 +1,52 @@
+@import '../_variables';
+@import '../_mixins';
+
+.ServiceHome {
+	@include linear-gradient($color-variant-secundary, $color-base);
+	color: white;
+	.container {
+		@include container;
+	}
+}
+
+.ServiceHome-content {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 15px;
+}
+
+.ServiceHome-content-card {
+	max-width: 250px;
+	height: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	padding: 20px;
+	box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2);
+	@include linear-gradient($color-variant, $color-variant-secundary);
+	h3 {
+		font-family: $font-primary;
+		text-align: center;		
+		font-size: $font-size-lg;
+		font-weight: bold;
+		margin-bottom: 30px;
+	}
+	p{
+		font-family: $font-secundary;
+		font-size: $font-size-md;
+		text-align: justify;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.ServiceHome {
+		background: $color-variant-secundary;
+		.container {
+			width: 100%;
+			max-width: unset;
+		}
+	}
+	.ServiceHome-content {
+		margin-top: 20px;
+	}
+}

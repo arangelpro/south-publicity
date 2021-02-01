@@ -1,0 +1,45 @@
+@import './_variables.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+.btn {
+	text-align: center;
+	padding: 0.4em 0.8em 0.6em;
+	border: none;
+	color: white;
+	background: lightgray;
+	margin: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: inset 0 -0.2em rgba(0, 0, 0, 0.2);
+	outline: 0;
+	transition: 0.2s;
+	will-change: transform;
+	text-decoration: none;
+}
+
+.overlap {
+	z-index: 5000;
+}
+
+.sticky {
+	position: sticky;
+  	top: 0;
+  	z-index: 100;
+}
+
+.title-section {
+	font-family: $font-primary;
+	font-size: $font-size-xl;
+	text-align: center;
+	margin: 10px 0;
+}

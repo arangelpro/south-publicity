@@ -1,0 +1,53 @@
+@import '../_variables';
+@import '../_mixins';
+
+.TeamHome {
+	background: $color-primary;
+	color: white;
+	font-family: $font-secundary;
+	img {	
+		width: 100%;
+		height: auto;
+	}
+	.container {
+		@include container;
+		margin-top: -130px;
+	}
+}
+.TeamHome-details {
+	display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+	padding: 15px;
+	padding-top: 50px;
+}
+
+.TeamHome-detail {
+	padding: 20px;
+	margin: auto 0;
+	&-img {
+		margin-bottom: 20px;
+		img {
+			border: 6px solid $color-variant-secundary;
+			max-width: 100px;
+			height: auto;
+			border-radius: 50%;
+		}
+	}
+	&-perfil {
+		font-family: $font-primary;
+		font-size: $font-size-md;
+		font-weight: 700;
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.TeamHome {
+		.container {
+			width: 100%;
+			max-width: unset;
+		}
+
+	}
+}

@@ -1,0 +1,27 @@
+@import '../_variables';
+@import '../_mixins';
+
+.AboutHome {
+	//@include linear-gradient($color-primary, $color-variant-secundary);
+	@include linear-gradient(#12491d, #237c26);
+	//background: #237c26;
+	color: white;
+	font-family: $font-secundary;
+	padding-bottom: 40px;
+	img {	
+		margin-top: -100px;
+		width: 100%;
+		height: auto;
+	}
+	.container {
+		@include container;
+		max-width: 600px;
+	}
+}
+.AboutHome-content {
+	padding: 15px;
+	p {
+		text-align: justify;
+		margin: 0;
+	}
+}

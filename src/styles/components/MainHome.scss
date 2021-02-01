@@ -1,0 +1,79 @@
+@import '../variables';
+@import '../mixins';
+
+.MainHome{
+	@include linear-gradient($color-base, $color-primary);
+	font-family: $font-secundary;
+	font-size: $font-size-md;
+	color: white;
+	min-height: 200px;
+	.container {
+		@include container;
+	}
+}
+.MainHome-info {
+	display: flex;
+	flex-direction: column;
+	&-title {
+		font-family: $font-primary;
+		font-size: $font-size-xl;
+		text-align: justify;
+		margin-bottom: 10px;
+		color: $color-variant;
+	}
+	&-subtitle {
+		font-size: $font-size-md;
+		text-align: justify;
+		margin-bottom: 20px;
+	}
+	&-description {
+		font-size: $font-size-md;
+		text-align: justify;
+	}
+}
+
+.MainHome-image {
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	.MainHome {
+		position: relative;
+		height: 48vw;
+		.container {
+			margin: 0 10vw;
+			padding: 10% 0;
+		}
+	}
+	.MainHome-image {
+		display: flex;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: url('../../assets/wave_1.svg');
+		background-repeat: no-repeat;
+		background-position: bottom;
+		background-size: cover;
+		&_ilustration {
+			top: -15px;
+		}
+		&_ilustration, &_neon {
+			position: absolute;
+			width: 33vw;			
+			right: 3vw;
+			z-index: 4;
+		}
+		&_neon {
+			top: -10px;
+		}
+		&_growth {
+			position: absolute;
+			width: 13vw;
+			top: 15vw;
+			right: 3vw;
+			z-index: 5;
+		}
+	}
+}

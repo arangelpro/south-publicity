@@ -1,0 +1,143 @@
+@import '../_variables';
+@import '../_mixins';
+
+.Header {
+	background-color: $color-primary;
+	height: 50px;
+	border-bottom: 5px solid $color-primary;
+	font-size: $font-size-md;
+	font-family: $font-secundary, sans-serif;
+}
+
+.Header-nav, 
+.Header-nav-brand, 
+.Header-nav-brand-image, 
+.Header-nav-brand-description,
+.Header-nav-brand-description .container {
+	height: inherit;
+}
+
+.Header-nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+.Header-nav-brand {
+	display: flex;
+	align-items: center;
+	&-image {
+		@include display-header-img;
+		background-color: $color-base;
+		border-radius: 0 0 $radius-header 0;
+		img {
+			height: 40px;
+		}
+	}
+	&-description {
+		background-color: $color-base;
+		margin-left: -4px;
+		.container {
+			@include display-header-img;
+			background-color: $color-primary;
+			border-radius: $radius-header 0 0;
+			img {
+				height: 30px;
+			}
+		}
+	}
+}
+
+.Header-nav-toggle {
+	padding: 0 10px;
+	color: white;
+	background-color: transparent;
+	font-size: $font-size-lg;
+	border: unset;
+	cursor: pointer;
+	&:hover {
+		color: $color-secundary;
+	}
+	&:focus {
+		outline: unset;
+	}
+}
+
+.Header-nav-toggle.overlap {
+	position:absolute;
+	top: 10px;
+	right: 10px;
+}
+.Header-nav-collapse.collapse {
+	display: none;
+}
+.Header-nav-collapse.show {
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    position: absolute;
+	width: 100%;
+	height: 100vh;
+    background-color: $color-base-90;    
+}
+.Header-nav-navbar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	font-size: $font-size-lg;
+	li {
+		padding: 10px 0;
+		a {
+			color: white;		
+		}
+		a:hover {
+			color: $color-secundary;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.Header {
+		height: 70px;
+		border-bottom: 10px solid $color-primary;
+	}	
+	.Header-nav-brand {
+		&-image {
+			img {
+				height: 50px;
+			}
+		}
+		&-description {
+			margin-left: 0;
+			.container {
+				img {
+					height: 40px;
+				}
+			}
+		}
+	}
+
+	.Header-nav-toggle {
+		display: none;
+	}
+
+	.Header-nav-collapse.collapse {
+		display: flex;
+	}
+	.Header-nav-navbar {
+		flex-direction: row;
+		margin-right: 10px;
+		font-size: $font-size-md;
+
+		li {
+			padding: 5px;
+			a {
+				padding: 34px 10px;			
+			}
+			a.active {
+				background: $color-base-90;
+			}
+		}
+	}
+}
